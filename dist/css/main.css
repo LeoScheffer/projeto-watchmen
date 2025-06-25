@@ -1,0 +1,254 @@
+@keyframes bg-animation {
+  0% {
+    opacity: 0.7;
+  }
+  3% {
+    opacity: 0.4;
+  }
+  5% {
+    opacity: 0.7;
+  }
+  15% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+@keyframes text-animation {
+  0% {
+    color: #FFD600;
+    text-shadow: -3px -3px 5px #0075ff, 3px -3px 5px #0075ff, 3px 3px 5px #0075ff, -3px 3px 5px #0075ff;
+  }
+  3% {
+    color: #666666;
+    text-shadow: none;
+  }
+  5% {
+    color: #FFD600;
+    text-shadow: -3px -3px 5px #0075ff, 3px -3px 5px #0075ff, 3px 3px 5px #0075ff, -3px 3px 5px #0075ff;
+  }
+  15% {
+    color: #666666;
+    text-shadow: none;
+  }
+  100% {
+    color: #666666;
+    text-shadow: none;
+  }
+}
+.neon {
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-size: 128px;
+}
+
+.neon {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  color: #FFD600;
+  text-shadow: -3px -3px 5px #0075ff, 3px -3px 5px #0075ff, 3px 3px 5px #0075ff, -3px 3px 5px #0075ff;
+}
+.neon:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: scale(2, 3);
+  animation-name: bg-animation;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  background-image: radial-gradient(#0075ff 0%, transparent 70%);
+  opacity: 0.4;
+}
+.neon span {
+  color: #666666;
+  text-shadow: none;
+  animation-name: text-animation;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+
+:root {
+  --background-image: url(/src/images/timeline/Murder.png);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Share, sans-serif;
+}
+
+.textSecondary {
+  color: #FFD600;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 12px 0;
+}
+
+.textTittle {
+  color: #FFD600;
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 24px 0;
+}
+
+.textSmall {
+  color: #FFD600;
+  font-size: 18px;
+  font-weight: 0;
+  letter-spacing: 1px;
+  text-transform: none;
+  padding: 12px 0;
+}
+
+body {
+  background-color: #010708;
+  color: white;
+}
+
+header {
+  background-image: url("/../src/images/Background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  text-align: center;
+  padding: 2rem 1rem;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header .smiley {
+  position: absolute;
+  top: 3rem;
+  left: 14rem;
+  width: 280px;
+  height: 280px;
+}
+header nav {
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+}
+header nav ul {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding-right: 2rem;
+  gap: 2rem;
+}
+header nav ul a {
+  color: #FFD600;
+  text-decoration: none;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.characters {
+  background-image: url("/../src/images/NoiseBackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.characters__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2.5rem;
+}
+.characters__cards__item {
+  list-style: none;
+  text-align: center;
+}
+.characters__cards__item img {
+  max-height: 50%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.characters__cards__item p {
+  text-align: center;
+}
+
+.container {
+  background-color: black;
+  padding: 0 3rem;
+}
+
+.smiley {
+  width: 434px;
+  height: 434px;
+}
+
+.timeline {
+  background-image: var(--background-image);
+  background-repeat: no-repeat;
+  transition: 1s ease-in-out;
+  height: 960px;
+}
+.timeline__list {
+  list-style: none;
+}
+.timeline__list__item {
+  display: flex;
+  max-width: 45%;
+}
+.timeline__list__item h2,
+.timeline__list__item p {
+  color: #49D8E8;
+  opacity: 12%;
+}
+.timeline__list__item--is-active {
+  color: #FFD600;
+  max-width: 45%;
+  display: flex;
+}
+.timeline__list__item--is-active .circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  border: solid 3px #FFD600;
+  box-shadow: 0px 0px 15px #49D8E8;
+  margin-right: 30px;
+  opacity: 100%;
+}
+
+.circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  border: solid 3px #49D8E8;
+  box-shadow: 0px 0px 15px #49D8E8;
+  opacity: 8%;
+  margin-right: 30px;
+}
+
+.btn {
+  height: 100px;
+  width: 238px;
+  background-color: #49D8E8;
+  border-radius: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0px 0px 15px #49D8E8;
+  margin-top: 12px;
+  border: none;
+  margin-bottom: 48px;
+}
+.btn:hover {
+  background-color: rgb(25.6365853659, 185.0292682927, 202.8634146341);
+  cursor: pointer;
+}
